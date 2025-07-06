@@ -4,19 +4,13 @@
   "description": "",
   "license": "ISC",
   "author": "abhi",
-<<<<<<< HEAD
   "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
-=======
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "start": "index.js"
->>>>>>> eecdc561107e4aa0fe8137b12033227a93e73d49
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
   }
 }
