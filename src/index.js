@@ -1,5 +1,16 @@
+import app from "./app.js";
 import connectDB from "./db/index.js";
+const port = process.env.PORT
+
 connectDB()
+.then(()=>{
+    app.listen(port || 6248,()=>{
+        console.log(`Server listening on port ${port}`)
+    })
+})
+.catch((err)=>{
+    console.log("Error from index :" , err)
+})
 
 
 
@@ -16,7 +27,6 @@ import mongoose from "mongoose";
 import { DB_NAME } from "./constants";
 import express from "express";
 const app = express();
-const port = process.env.PORT
 
 ( async () => {
     try {
