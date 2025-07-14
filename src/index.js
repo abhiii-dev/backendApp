@@ -4,7 +4,7 @@ const port = process.env.PORT
 
 connectDB()
 .then(()=>{
-    app.listen(port || 6248,()=>{
+    app.listen(port,()=>{
         console.log(`Server listening on port ${port}`)
     })
 })

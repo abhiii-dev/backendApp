@@ -1,1 +1,1 @@
-This is the app's backend is being build
+This is the app's backend which is being build
