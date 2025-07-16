@@ -10,9 +10,9 @@ const registerUser = asyncHandler(async (req,res)=>{
     // })
 
     const {fullName, email, username, password} = req.body
-    console.log("Email: ",email);
+    // console.log("Email: ",email);
 
-    if ([fullName, email, username, password].some((value)=> val?.trim() === "")) {
+    if ([fullName, email, username, password].some((value)=> value?.trim() === "")) {
         throw new ApiError(400, "All fields are required")
     }
 
@@ -22,8 +22,8 @@ const registerUser = asyncHandler(async (req,res)=>{
     if (existingUesr) {
         throw new ApiError(409,"Existing account")
     }
-    const avatarLocalPath = req.files?.avatar[0]?.path
-    const couverImageLocalPath = req.files?.coverImage[0]?.path
+    const avatarLocalPath = req.files?.avatar?.[0].path
+    const couverImageLocalPath = req.files?.coverImage?.[0].path
 
     if (!avatarLocalPath) {
         throw new ApiError(400,"Avatar file is required")
@@ -40,7 +40,7 @@ const registerUser = asyncHandler(async (req,res)=>{
         fullName,
         email,
         password,
-        username:username.toLowercase(),
+        username:username.toLowerCase(),
         avatar:avatar.url,
         coverImage:coverImage?.url || ""
     })

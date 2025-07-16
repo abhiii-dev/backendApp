@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema(
             required:[true, "Pass is required"]
         },
         refreshToken:{
-            type:string
+            type:String
         }
         
     },{timestamps:true})
@@ -90,4 +90,4 @@ userSchema.method.generateRefreshToken = function(){
 }
 
 
-export const User = mongoose.Model("User",userSchema)
+export const User = mongoose.model("User",userSchema)
